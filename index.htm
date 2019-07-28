@@ -1,12 +1,35 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <title>Happy Birthday, Aishu!</title>
-        <link rel="shortcut icon" href="cake_icon/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="cake_icon/favicon.ico" type="image/x-icon">
-    </head>
     <body>
-        <canvas id="myCanvas" width="800" height="600" style="border:1px solid;"></canvas>
-        <script src="draw-birthday-card.js"></script>
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <script>
+
+// The beginning of the program
+
+// Get the same canvas from above
+var canvas = document.getElementById("canvas");
+
+// Get the drawing object called "context"
+var context = canvas.getContext("2d");
+
+// Write Happy Birthday!
+context.font = "200px Arial";
+context.fillStyle = "orange";
+context.fillText("H", 10, 150);
+context.fillText("a", 140, 150);
+context.fillText("p", 240, 150);
+context.fillText("p", 340, 150);
+context.fillText("y", 440, 150);
+context.fillStyle = "brown";
+context.fillText("B", 10, 450);
+context.fillText("i", 140, 450);
+context.fillText("r", 190, 450);
+context.fillText("t", 270, 450);
+context.fillText("h", 335, 450);
+context.fillText("d", 440, 450);
+context.fillText("a", 545, 450);
+context.fillText("y", 650, 450);
+context.fillText("!", 755, 450);
+
+        </script>
     </body>
 </html>

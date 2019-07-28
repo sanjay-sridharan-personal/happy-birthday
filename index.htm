@@ -5,30 +5,41 @@
 
 // The beginning of the program
 
-// Get the same canvas from above
+// Get the canvas to draw on
 var canvas = document.getElementById("canvas");
 
-// Get the drawing object called "context"
-var context = canvas.getContext("2d");
+// Get the pencil
+var pencil = canvas.getContext("2d");
 
-// Write Happy Birthday!
-context.font = "200px Arial";
-context.fillStyle = "orange";
-context.fillText("H", 10, 150);
-context.fillText("a", 140, 150);
-context.fillText("p", 240, 150);
-context.fillText("p", 340, 150);
-context.fillText("y", 440, 150);
-context.fillStyle = "brown";
-context.fillText("B", 10, 450);
-context.fillText("i", 140, 450);
-context.fillText("r", 190, 450);
-context.fillText("t", 270, 450);
-context.fillText("h", 335, 450);
-context.fillText("d", 440, 450);
-context.fillText("a", 545, 450);
-context.fillText("y", 650, 450);
-context.fillText("!", 755, 450);
+// Write "Happy"
+pencil.font = "200px Arial";
+pencil.fillStyle = "orange";
+pencil.fillText("H", 10, 150);
+pencil.fillText("a", 140, 150);
+pencil.fillText("p", 240, 150);
+pencil.fillText("p", 340, 150);
+pencil.fillText("y", 440, 150);
+
+// Write "Birthday,"
+pencil.fillStyle = "brown";
+pencil.fillText("B", 10, 350);
+pencil.fillText("i", 140, 350);
+pencil.fillText("r", 190, 350);
+pencil.fillText("t", 270, 350);
+pencil.fillText("h", 330, 350);
+pencil.fillText("d", 435, 350);
+pencil.fillText("a", 540, 350);
+pencil.fillText("y", 645, 350);
+pencil.fillText(",", 730, 350);
+
+// Write "Aishu!"
+pencil.fillStyle = "green";
+pencil.fillText("A", 10, 550);
+pencil.fillText("i", 145, 550);
+pencil.fillText("s", 190, 550);
+pencil.fillText("h", 285, 550);
+pencil.fillText("u", 390, 550);
+pencil.fillText("!", 500, 550);
 
         </script>
     </body>

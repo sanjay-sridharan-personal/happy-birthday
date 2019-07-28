@@ -5,8 +5,6 @@
 
 // This is the beginning of the program
 
-writeMessage();
-
 async function writeMessage() {
 
     // Get the canvas to draw on
@@ -24,7 +22,7 @@ async function writeMessage() {
     pencil.fillText("p", 340, 150);
     pencil.fillText("y", 440, 150);
 
-    await waitForTime(1);
+    await forTime(1);
 
     // Write "Birthday,"
     pencil.fillStyle = "brown";
@@ -38,7 +36,7 @@ async function writeMessage() {
     pencil.fillText("y", 645, 350);
     pencil.fillText(",", 730, 350);
 
-    await waitForTime(1);
+    await forTime(1);
 
     // Write "Aishu!"
     pencil.fillStyle = "green";
@@ -50,9 +48,11 @@ async function writeMessage() {
     pencil.fillText("!", 500, 550);
 }
 
-function waitForTime(seconds) {
+function forTime(seconds) {
   return new Promise(resolve => setTimeout(resolve, seconds * 1000));
 }
+
+writeMessage();
 
 // This is the end of the program
 

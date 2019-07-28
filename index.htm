@@ -13,8 +13,10 @@ async function writeMessage() {
     // Get the pencil
     var pencil = canvas.getContext("2d");
 
-    // Write "Happy"
+    // Set the font and size
     pencil.font = "200px Arial";
+
+    // Write "Happy"
     pencil.fillStyle = "orange";
     pencil.fillText("H", 10, 150);
     pencil.fillText("a", 140, 150);

@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: sanjay-sridharan-personal/javascript@1d4c25393aad7e3b11332e948ac30f6fc7aa6cb0
+        uses: sanjay-sridharan-personal/javascript@c8e74c3185f22d820ec8e4d03187b64ebc25e52a
         with:
           who-to-greet: 'Sanjay Sridharan'
       # Use the output from the `hello` step

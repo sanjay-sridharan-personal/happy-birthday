@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checks if commit message is compliant
-        uses: sanjay-sridharan-personal/javascript@cba1d514921e9166e0f6491bdd9868ce0bd1b1a2
+        uses: sanjay-sridharan-personal/javascript@23fb7c4ac570abf79f73299abcc13776c385d233

@@ -1,8 +1,13 @@
-on: [push]
+on:
+  pull_request:
+    branches: [ 'master' ]
+    types: [ opened ]
 
 jobs:
-  commit_message_convention:
+  add_pr_label_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checks if commit message is compliant
-        uses: sanjay-sridharan-personal/javascript@83ec39ceab22be68209ce44343c1974ecce31d0c
+      - id: add-pr-label
+        uses: sanjay-sridharan-personal/javascript@ea14f9044a0e01dde320004d1f346038265c4edb
+        with:
+          GH_PAT: ${{ secrets.GH_PAT }}

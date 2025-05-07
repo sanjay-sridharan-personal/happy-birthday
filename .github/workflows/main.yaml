@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: add-pr-label
-        uses: sanjay-sridharan-personal/javascript@56bb06763744025d591feeced8d80aff9c6f191c
+        uses: sanjay-sridharan-personal/javascript@8406062fa28b8e5b4f5c8eae0b508ccb898ae244
         with:
           GH_PAT: ${{ secrets.GH_PAT }}

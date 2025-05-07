@@ -8,6 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: add-pr-label
-        uses: sanjay-sridharan-personal/javascript@8de07542fff0fd1cfe849265180b070894c3846f
-        with:
-          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+        uses: sanjay-sridharan-personal/javascript@3e778a27aead7a338c6000c4dfa6f26478b9c9aa

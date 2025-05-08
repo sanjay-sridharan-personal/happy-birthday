@@ -1,7 +1,7 @@
 on:
   pull_request:
     branches: [ 'master' ]
-    types: [ opened ]
+    types: [ opened, reopened ]
 
 jobs:
   add_pr_label_job:

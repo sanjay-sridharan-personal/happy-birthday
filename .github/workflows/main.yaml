@@ -9,5 +9,3 @@ jobs:
     steps:
       - id: add-pr-label
         uses: sanjay-sridharan-personal/javascript@interview
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

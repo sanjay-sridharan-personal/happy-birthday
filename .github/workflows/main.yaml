@@ -1,6 +1,6 @@
 on:
   pull_request:
-    branches: [ 'master' ]
+    branches: [ 'interview' ]
     types: [ opened, reopened ]
 
 jobs:
@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: add-pr-label
-        uses: sanjay-sridharan-personal/javascript@master
+        uses: sanjay-sridharan-personal/javascript@interview
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

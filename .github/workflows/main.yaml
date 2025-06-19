@@ -1,13 +1,11 @@
 on:
   pull_request:
     branches: [ 'interview' ]
-    types: [ opened, reopened ]
+    types: [ opened ]
 
 jobs:
   add_pr_label_job:
     runs-on: ubuntu-latest
     steps:
-      - id: add-pr-label
+      - id: check-commit-message
         uses: sanjay-sridharan-personal/javascript@interview
-        with:
-          whodaboss: ${{ secrets.whodaboss }}

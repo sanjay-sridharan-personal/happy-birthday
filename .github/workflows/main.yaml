@@ -4,10 +4,8 @@ on:
     types: [ opened, reopened ]
 
 jobs:
-  add_pr_label_job:
+  check_pr_title_job:
     runs-on: ubuntu-latest
     steps:
-      - id: add-pr-label
+      - id: check-pr-title
         uses: sanjay-sridharan-personal/javascript@master
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

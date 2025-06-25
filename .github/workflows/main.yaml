@@ -7,5 +7,5 @@ jobs:
   add_pr_label_job:
     runs-on: ubuntu-latest
     steps:
-      - id: check-pr-title
-        uses: sanjay-sridharan-personal/javascript@interview
+      - id: add-needs-review-label
+        uses: sanjay-sridharan-personal/javascript@master

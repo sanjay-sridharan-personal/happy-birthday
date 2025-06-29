@@ -2,65 +2,37 @@ import * as core from "@actions/core";
 import * as github from "@actions/github";
 
 function addCommentToPR(comment, issue_number, repo, owner) {
-    const retVal = {
-        status: true,
-        error: ''
-    };
-
-    try {
-        const octokit = github.getOctokit(core.getInput('gh_token'));
-        octokit.rest.issues.createComment({
-            owner,
-            repo,
-            issue_number,
-            body: comment
-        });
-    }
-    catch (error) {
-        retVal.status = false;
-        retVal.error = error.toString();
-    }
-
-    return retVal;
+    octokit.rest.issues.createComment({
+        owner,
+        repo,
+        issue_number,
+        body: comment
+    });
 }
 
 async function getTitleOfPR(number, repo, owner) {
-    const retVal = {
-        prTitle: '',
-        status: true,
-        error: ''
-    };
-
-    try {
-        const octokit = github.getOctokit(core.getInput('gh_token'));
-        const pr = await octokit.rest.pulls.get({
-            owner,
-            repo,
-            pull_number: number
-        });
-        retVal.prTitle = pr.data.title;
-    }
-    catch (error) {
-        retVal.status = false;
-        retVal.error = error.toString();
-    }
-
-    return retVal;
+    const pr = await octokit.rest.pulls.get({
+        owner,
+        repo,
+        pull_number: number
+    });
+    return pr.data.title;
 }
 
-const issue = github.context.issue;
-const {owner, repo, number} = issue;
-const {prTitle, status, error} = await getTitleOfPR(number, repo, owner);
-const expectedPrefix = 'Jira-';
-if (status) {
+core.info(`payload = ${JSON.stringify(github.context.payload)}`);
+const octokit = github.getOctokit(core.getInput('gh_token'));
+try {
+    const issue = github.context.issue;
+    const {number, repo, owner} = issue;
+    const prTitle = await getTitleOfPR(number, repo, owner);
+    const expectedPrefix = 'Jira-';
     if (!prTitle.startsWith(expectedPrefix)) {
-        const {status, error} = addCommentToPR(
-            `Expected title to start with "${expectedPrefix}", however:\n${prTitle}`,
-            number, repo, owner);
-        if (!status) {
-            core.setFailed(error);
-        }
+        addCommentToPR(`Expected title to start with "${expectedPrefix}", however:\n${prTitle}`,
+                       number,
+                       repo,
+                       owner);
     }
-} else {
-    core.setFailed(error);
+}
+catch (error) {
+    core.setFailed(error.toString());
 }

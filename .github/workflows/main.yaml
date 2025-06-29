@@ -1,11 +1,14 @@
 on:
   pull_request:
     branches: [ 'master' ]
-    types: [ opened, reopened ]
+    types: [ opened ]
 
 jobs:
   check_pr_title_job:
     runs-on: ubuntu-latest
     steps:
-      - id: check-pr-title
-        uses: sanjay-sridharan-personal/javascript@master
+      - name: Local action requires checking out the repo
+        uses: actions/checkout@v4
+      - run: cd ./.github/actions/check-pr-title && npm ci
+      - name: Now perform the job's core action
+        uses: ./.github/actions/check-pr-title

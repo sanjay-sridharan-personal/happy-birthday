@@ -1,0 +1,12 @@
+{
+  "name": "check-pr-title",
+  "version": "1.0.0",
+  "description": "GitHub Action",
+  "author": "Sanjay Sridharan",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@actions/core": "1.11.1",
+    "@actions/github": "6.0.0"
+  }
+}

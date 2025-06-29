@@ -7,5 +7,4 @@ jobs:
   check_pr_title_job:
     runs-on: ubuntu-latest
     steps:
-      - id: check-pr-title
-        uses: sanjay-sridharan-personal/javascript@master
+      - uses: sanjay-sridharan-personal/happy-birthday@master

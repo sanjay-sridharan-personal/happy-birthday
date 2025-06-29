@@ -7,5 +7,5 @@ jobs:
   check_pr_title_job:
     runs-on: ubuntu-latest
     steps:
-      - id: check-pr-title
-        uses: sanjay-sridharan-personal/javascript@master
+      - id: Use local check-pr-title action
+        uses: ./.github/actions/check-pr-title

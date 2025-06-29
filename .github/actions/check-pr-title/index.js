@@ -48,7 +48,8 @@ async function getTitleOfPR(number, repo, owner) {
     return retVal;
 }
 
-const {owner, repo, number} = github.context.issue;
+const issue = github.context.issue;
+const {owner, repo, number} = issue;
 const {prTitle, status, error} = await getTitleOfPR(number, repo, owner);
 const expectedPrefix = 'Jira-';
 if (status) {

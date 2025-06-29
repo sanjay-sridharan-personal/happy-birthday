@@ -1,0 +1,10 @@
+name: check-pr-title
+description: Check that PR's title meets our conventions
+inputs:
+  gh_token:
+    description: The invoking repo's GITHUB_TOKEN
+    required: false
+    default: ${{ github.token }}
+runs:
+  using: node16
+  main: index.js
